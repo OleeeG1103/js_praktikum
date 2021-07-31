@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="style/normalize.css" />
+	<link rel="stylesheet" href="style/style.css" />
+	<title>Mesto</title>
+</head>
+<body>
+	<main class="main">
+		<div class="wrapper">
+		    <header class="header">
+			    <div class="header-logo">
+				    <a class="logo" href="index.html">
+					    <img src="img/icon/logo.svg" alt="logo-mesto" />
+				    </a>
+			    </div>
+		    </header>
+
+		    <div class="profile">
+		    	<div class="profile-photo">
+		    		<img src="img/avatar.jpg" alt="avatar" />
+		    	</div>
+
+		    	<div class="profile-info">
+		    		<div class="profile-info--name">
+		    			<span id="profile-name">Жак-Ив Кусто</span>
+		    		</div>
+
+		    		<div class="profile-info--position">
+		    			<span id="profile-position">Исследователь океана</span>
+		    		</div>
+
+		    		<button class="profile-info--editBtn">
+		    			<img src="img/icon/editButton.svg" alt="editInfo" />
+		    		</button>
+
+		    	</div>
+
+		    	<button class="profile-add-btn">
+		    		<img src="img/icon/addButton.svg" alt="addNew" />
+		    	</button>
+		    </div>
+
+		    <div class="gallery">
+		    	<div class="card">
+		    		<div class="card-top">
+		    			<img class="card-top--photo" src="img/card/card1.jpg" alt="photo" />
+		    		</div>
+		    		<div class="card-body">
+		    			<span class="card-body--title">Карачаевск</span>
+		    			<img class="card-body--like" src="img/icon/like.svg" alt="like" />
+		    		</div>
+		    	</div>
+
+		    	<div class="card">
+		    		<div class="card-top">
+		    			<img class="card-top--photo" src="img/card/card2.jpg" alt="photo" />
+		    		</div>
+		    		<div class="card-body">
+		    			<span class="card-body--title">Гора Эльбрус</span>
+		    			<img class="card-body--like" src="img/icon/like.svg" alt="like" />
+		    		</div>
+		    	</div>
+
+		    	<div class="card">
+		    		<div class="card-top">
+		    			<img class="card-top--photo" src="img/card/card3.jpg" alt="photo" />
+		    		</div>
+		    		<div class="card-body">
+		    			<span class="card-body--title">Домбай</span>
+		    			<img class="card-body--like" src="img/icon/like.svg" alt="like" />
+		    		</div>
+		    	</div>
+
+		    	<div class="card">
+		    		<div class="card-top">
+		    			<img class="card-top--photo" src="img/card/card2.jpg" alt="photo" />
+		    		</div>
+		    		<div class="card-body">
+		    			<span class="card-body--title">Гора Эльбрус</span>
+		    			<img class="card-body--like" src="img/icon/like.svg" alt="like" />
+		    		</div>
+		    	</div>
+
+		    	<div class="card">
+		    		<div class="card-top">
+		    			<img class="card-top--photo" src="img/card/card3.jpg" alt="photo" />
+		    		</div>
+		    		<div class="card-body">
+		    			<span class="card-body--title">Домбай</span>
+		    			<img class="card-body--like" src="img/icon/like.svg" alt="like" />
+		    		</div>
+		    	</div>
+
+		    	<div class="card">
+		    		<div class="card-top">
+		    			<img class="card-top--photo" src="img/card/card1.jpg" alt="photo" />
+		    		</div>
+		    		<div class="card-body">
+		    			<span class="card-body--title">Карачаево-Черкессия</span>
+		    			<img class="card-body--like" src="img/icon/like.svg" alt="like" />
+		    		</div>
+		    	</div>
+		    </div>
+
+		    <div class="footer">
+		    	<span class="footer-text">&copy; 2020 Mesto Russia</span>
+		    </div>
+	    </div>
+
+	    <div class="popup-wrapper">
+	    	<div class="popup">
+	    		<button class="popup-close">
+	    			<img class="popup-close--btn-icon" src="img/icon/close.svg" />
+	    		</button>
+	    		<span class="popup-title">Редактировать профиль</span>
+	    		<form class="popup-form" action="#" method="">
+	    			<input class="popup-form--name" type="text" name="name" value="" />
+	    			<input class="popup-form--position" type="text" name="position" value="" />
+	    			<button class="popup-form--btn" type="submit">Сохранить</button>
+	    		</form>
+	    	</div>
+	    </div>
+	</main>
+
+	<script src="js/index.js"></script>
+	
+</body>
+</html>

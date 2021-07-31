@@ -1,0 +1,137 @@
+.popup-wrapper {
+	width: 100%;
+	height: 100%;
+	display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgba(0,0,0, 0.5);
+    pointer-events: none;
+}
+
+.popup-wrapper--show {
+	display: flex;
+	pointer-events: all; // Возвращаем события
+}
+
+.popup {
+	width: 430px;
+	height: 330px;
+	background: #ffffff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 34px 36px 37px 36px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.popup-close {
+	width: 32px;
+	height: 32px;
+	background-color: transparent;
+	padding: 0;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 100%;
+    bottom: 100%;
+    margin: 0 0 8px 8px;
+    transition: opacity 0.3s;
+}
+
+.popup-close:hover {
+	opacity: 0.6;
+}
+
+.popup-title {
+	font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin-bottom: 54px;
+}
+
+.popup-form {
+	flex-grow: 1;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.popup-form--name,
+.popup-form--position {
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, .2);
+	font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+	padding-bottom: 13px;
+	outline: none;
+}
+
+.popup-form--position {
+	margin-top: 30px;
+}
+
+.popup-form--btn {
+	width: 100%;
+	height: 50px;
+	background: #000000;
+	border: none;
+	outline: none;
+    border-radius: 2px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #ffffff;
+    transition: background-color 0.3s;
+    margin-top: 48px;
+}
+
+.popup-form--btn:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, .8);
+}
+
+@media all and (max-width: 768px) {
+	.popup {
+		width: 282px;
+        height: 322px;
+        padding: 25px 22px;
+	}
+
+	.popup-close {
+		width: 20px;
+		height: 20px;
+		margin: 0 0 16px 0;
+		right: 0;
+		left: unset;
+	}
+
+	.popup-close img {
+		width: 100%;
+	}
+
+	.popup-title {
+		font-size: 18px;
+        line-height: 22px;
+	}
+
+	.popup-form--btn {
+		height: 56px;
+		font-size: 14px;
+        line-height: 17px;
+	}
+}
