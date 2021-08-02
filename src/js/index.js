@@ -31,6 +31,7 @@ let popupFormName = document.querySelector('.popup-form--name');
 let profilePosition = document.querySelector('#profile-position');
 let popupFormPosition = document.querySelector('.popup-form--position');
 let popupFormBtn = document.querySelector('.popup-form--btn');
+let popupEditForm = document.querySelector('.popup-form');
 
 popupFormName.value = profileName.textContent;
 popupFormPosition.value = profilePosition.textContent;
@@ -39,6 +40,7 @@ function editProfile(evt) {
 	evt.preventDefault();
 	profileName.textContent = popupFormName.value;
 	profilePosition.textContent = popupFormPosition.value;
+	popupEditClose();
 }
 
-popupFormBtn.addEventListener('submit', editProfile);
+popupEditForm.addEventListener('submit', editProfile);
