@@ -75,6 +75,7 @@
 		max-width: 80%;
 	}
 
+	.profile-info--name,
 	.profile-info--position {
 		text-align: center;
 	}
