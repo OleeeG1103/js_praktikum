@@ -19,6 +19,7 @@
 .profile-info {
 	position: relative;
 	margin: 0 auto 0 30px;
+	max-width: 60%;
 }
 
 .profile-info--name {
@@ -71,6 +72,7 @@
 
 	.profile-info {
 		margin: 22.25px auto 36px auto;
+		max-width: 80%;
 	}
 
 	.profile-info--position {
