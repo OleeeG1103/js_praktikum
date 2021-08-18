@@ -47,7 +47,7 @@
 		    </div>
 
 		    <div class="gallery">
-		    	<div class="card">
+		    	<!--<div class="card">
 		    		<div class="card-top">
 		    			<img class="card-top--photo" src="img/card/card1.jpg" alt="photo" />
 		    		</div>
@@ -105,13 +105,25 @@
 		    			<span class="card-body--title">Карачаево-Черкессия</span>
 		    			<img class="card-body--like" src="img/icon/like.svg" alt="like" />
 		    		</div>
-		    	</div>
+		    	</div>-->
 		    </div>
 
 		    <div class="footer">
 		    	<span class="footer-text">&copy; 2020 Mesto Russia</span>
 		    </div>
 	    </div>
+
+	    <template class="gallery-template">
+	    	<div class="card">
+		    	<div class="card-top">
+		    		<img class="card-top--photo" src="" alt="photo" />
+		    	</div>
+		    	<div class="card-body">
+		    		<span class="card-body--title"></span>
+		    		<img class="card-body--like" src="img/icon/like.svg" alt="like" />
+		    	</div>
+		    </div>
+	    </template>
 
 	    <div class="popup-wrapper" id="popupEditProfile">
 	    	<div class="popup">
@@ -142,7 +154,8 @@
 	    </div>
 	</main>
 
+	<script src="js/initialCards.js"></script>
 	<script src="js/index.js"></script>
-	
+
 </body>
 </html>

@@ -1,3 +1,6 @@
+const galleryList = document.querySelector('.gallery');
+const galleryTemplate = document.querySelector('.gallery-template').content;
+
 const initialCards = [
   {
     name: 'Архыз',
@@ -22,5 +25,18 @@ const initialCards = [
   {
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
+  },
 ]; 
+
+initialCards.forEach(function (item) {
+  const card = galleryTemplate.querySelector('.card').cloneNode(true);
+
+  //cardTop = card.querySelector('.card-top');
+  cardTopPhoto = card.querySelector('.card-top--photo').src = item.link;
+  //cardBody = card.querySelector('.card-body');
+  cardBodyTitle = card.querySelector('.card-body--title').textContent = item.name;
+
+
+
+galleryList.append(card);
+});
