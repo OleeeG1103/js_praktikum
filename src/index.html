@@ -41,7 +41,7 @@
 
 		    	</div>
 
-		    	<button class="profile-add-btn">
+		    	<button class="profile-add-card--btn">
 		    		<img src="img/icon/addButton.svg" alt="addNew" />
 		    	</button>
 		    </div>
@@ -113,15 +113,29 @@
 		    </div>
 	    </div>
 
-	    <div class="popup-wrapper">
+	    <div class="popup-wrapper" id="popupEditProfile">
 	    	<div class="popup">
-	    		<button class="popup-close">
+	    		<button class="popup-close popup-close--editProfile">
 	    			<img class="popup-close--btn-icon" src="img/icon/close.svg" />
 	    		</button>
 	    		<span class="popup-title">Редактировать профиль</span>
-	    		<form class="popup-form" name="popup-form-edit-info" action="#" method="" autocomplete="off">
+	    		<form class="popup-form popup-form--edit-profile" name="popup-form-edit-profile" action="#" method="" autocomplete="off">
 	    			<input class="popup-form--name" type="text" name="name" value="" />
 	    			<input class="popup-form--position" type="text" name="position" value="" />
+	    			<button class="popup-form--btn" type="submit">Сохранить</button>
+	    		</form>
+	    	</div>
+	    </div>
+
+	    <div class="popup-wrapper" id="popupAddCard">
+	    	<div class="popup">
+	    		<button class="popup-close popup-close--addCard">
+	    			<img class="popup-close--btn-icon" src="img/icon/close.svg" />
+	    		</button>
+	    		<span class="popup-title">Новое место</span>
+	    		<form class="popup-form popup-form--add-card" name="popup-form-add-card" action="#" method="" autocomplete="off">
+	    			<input class="popup-form--name" type="text" name="name" value=""  />
+	    			<input class="popup-form--link" type="text" name="photo" value="" />
 	    			<button class="popup-form--btn" type="submit">Сохранить</button>
 	    		</form>
 	    	</div>

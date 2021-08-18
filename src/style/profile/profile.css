@@ -50,7 +50,7 @@
     transition: opacity 0.3s;
 }
 
-.profile-add-btn {
+.profile-add-card--btn {
 	width: 150px;
 	height: 50px;
 	border: 2px solid #ffffff;
@@ -61,7 +61,7 @@
 }
 
 .profile-info--editBtn:hover,
-.profile-add-btn:hover {
+.profile-add-card--btn:hover {
 	opacity: 0.6;
 }
 
@@ -106,11 +106,11 @@
 		width: 7.5px;
 	}
 
-	.profile-add-btn {
+	.profile-add-card--btn {
 		width: 100%;
 	}
 
-	.profile-add-btn img {
+	.profile-add-card--btn img {
 		width: 16px;
 	}
 }

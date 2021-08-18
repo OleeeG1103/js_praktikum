@@ -1,17 +1,19 @@
 .popup-wrapper {
 	width: 100%;
 	height: 100%;
-	display: none;
+	display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     background-color: rgba(0,0,0, 0.5);
-    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .3s, opacity .3s;
 }
 
 .popup-wrapper--show {
-	display: flex;
-	pointer-events: all; // Возвращаем события
+	visibility: visible;
+	opacity: 1;
 }
 
 .popup {
@@ -65,8 +67,7 @@
     justify-content: space-between;
 }
 
-.popup-form--name,
-.popup-form--position {
+.popup-form input {
 	width: 100%;
 	border: none;
 	border-bottom: 1px solid rgba(0, 0, 0, .2);
@@ -79,7 +80,8 @@
 	outline: none;
 }
 
-.popup-form--position {
+.popup-form--position,
+.popup-form--link {
 	margin-top: 30px;
 }
 
