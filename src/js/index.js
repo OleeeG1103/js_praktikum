@@ -18,7 +18,6 @@ const popupAddCard = document.querySelector('#popupAddCard');
 const closePopupAddCard = document.querySelector('.popup-close--addCard');
 
 // const form add card popup
-
 const popupFormAddCard = document.querySelector('.popup-form--add-card');
 const popupFormNameCard = popupFormAddCard.querySelector('.popup-form--name');
 const popupFormLinkImg = popupFormAddCard.querySelector('.popup-form--link');
@@ -33,63 +32,93 @@ const popupHide = (popup) => {
 	popup.classList.remove('popup-wrapper--show');
 };
 
-// forms popup
+// forms edit popup
 profileEditBtn.addEventListener('click', () => {
 	popupShow(popupEditProfile);
 	popupFormName.value = profileName.textContent;
     popupFormPosition.value = profilePosition.textContent;
 });
 
+closePopupEditProfile.addEventListener('click', () => {
+	popupHide(popupEditProfile);
+});
+
+function editProfile(evt) {
+	evt.preventDefault();
+	profileName.textContent = popupFormName.value;
+	profilePosition.textContent = popupFormPosition.value;
+	popupHide(popupEditProfile);
+};
+
+popupFormEditProfile.addEventListener('submit', editProfile);
+
+// form add card popup
 profileAddCardBtn.addEventListener('click', () => {
 	popupShow(popupAddCard);
 	popupFormNameCard.placeholder = 'Название';
     popupFormLinkImg.placeholder = 'Ссылка на картинку';
 });
 
-closePopupEditProfile.addEventListener('click', () => {
-	popupHide(popupEditProfile);
-});
-
 closePopupAddCard.addEventListener('click', () => {
 	popupHide(popupAddCard);
 });
 
+const galleryList = document.querySelector('.gallery');
+const galleryTemplate = document.querySelector('.gallery-template').content;
 
-//function popupEditShow() {
-//	popupFormName.value = profileName.textContent;
-//    popupFormPosition.value = profilePosition.textContent;
-//    
-//	popup.classList.add('popup-wrapper--show');
-//}
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  },
+]; 
 
-//profileEditBtn.addEventListener('click', popupEditShow);
+function renderGalleryCards() { 
+    const newInitialCards = initialCards.map(showInitialCards); 
+        galleryList.append(...newInitialCards); 
+} 
 
+function showInitialCards(item) { 
+    const card = galleryTemplate.querySelector('.card').cloneNode(true);
+    const cardBodyTitle = card.querySelector('.card-body--title'); 
+    const cardTopPhoto = card.querySelector('.card-top--photo'); 
+        cardBodyTitle.textContent = item.name; 
+        cardTopPhoto.src = item.link; 
+        cardTopPhoto.alt = item.name;
 
-//function popupEditClose() {
-//	popup.classList.remove('popup-wrapper--show');
-//}
-
-//closePopup.addEventListener('click', popupEditClose);
-
-//document.addEventListener('click', (e) => {
-//	if(e.target === popup) {
-//		popupEditClose();
-//	}
-//});
-
-
-// form edit popup 
-
-
-
-function editProfile(evt) {
-	evt.preventDefault();
-	profileName.textContent = popupFormName.value;
-	profilePosition.textContent = popupFormPosition.value;
-	//popupEditClose();
-	//popupHide();
-	popupHide(popupEditProfile);
+    return card; 
 }
 
-popupFormEditProfile.addEventListener('submit', editProfile);
+renderGalleryCards();
+function addNewCard(evt) {
+	evt.preventDefault();
+	galleryList.prepend(showInitialCards({
+		name: popupFormNameCard.value,
+		link: popupFormLinkImg.value,
+	}));
+	popupFormNameCard.value = '';
+	popupFormLinkImg.value = '';
+	popupHide(popupAddCard);
+}
 
+popupFormAddCard.addEventListener('submit', addNewCard);
