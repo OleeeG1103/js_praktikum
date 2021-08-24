@@ -17,6 +17,10 @@
 	object-fit: cover;
 }
 
+.card-top--photo:hover {
+	cursor: pointer;
+}
+
 .card-body {
 	padding: 15px 20px 31px 20px;
 	display: flex;

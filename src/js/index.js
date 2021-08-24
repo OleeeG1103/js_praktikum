@@ -23,6 +23,14 @@ const popupFormNameCard = popupFormAddCard.querySelector('.popup-form--name');
 const popupFormLinkImg = popupFormAddCard.querySelector('.popup-form--link');
 const popupFormAddCardBtn = popupFormAddCard.querySelector('.popup-form--btn');
 
+// const show/hide view img popup
+const popupViewImg = document.querySelector('#popupViewImg');
+const closePopupViewImg = document.querySelector('.popup-close--view-img');
+
+// const body view img popup
+const popupViewImgBody = document.querySelector('.popup-body--img');
+const popupViewImgTitle = document.querySelector('.popup-view-img--title'); 
+
 // show/hide popup
 const popupShow = (popup) => {
 	popup.classList.add('popup-wrapper--show');
@@ -62,6 +70,19 @@ profileAddCardBtn.addEventListener('click', () => {
 closePopupAddCard.addEventListener('click', () => {
 	popupHide(popupAddCard);
 });
+
+function addNewCard(evt) {
+	evt.preventDefault();
+	galleryList.prepend(showInitialCards({
+		name: popupFormNameCard.value,
+		link: popupFormLinkImg.value,
+	}));
+	popupFormNameCard.value = '';
+	popupFormLinkImg.value = '';
+	popupHide(popupAddCard);
+};
+
+popupFormAddCard.addEventListener('submit', addNewCard);
 
 const galleryList = document.querySelector('.gallery');
 const galleryTemplate = document.querySelector('.gallery-template').content;
@@ -115,25 +136,25 @@ function showInitialCards(item) {
 
         deleteCardBtn.addEventListener('click', function (evt) {
             evt.target.closest('.card').remove();
-        }); 
+        });
+
+        cardTopPhoto.addEventListener('click', () => {
+        	popupShow(popupViewImg);
+        	popupViewImgBody.src = cardTopPhoto.src;
+        	popupViewImgBody.alt = cardTopPhoto.alt;
+        	popupViewImgTitle.textContent = cardBodyTitle.textContent;
+        });
+
+        closePopupViewImg.addEventListener('click', () => {
+        	popupHide(popupViewImg);
+        })
 
     return card; 
 };
 
 renderGalleryCards();
 
-function addNewCard(evt) {
-	evt.preventDefault();
-	galleryList.prepend(showInitialCards({
-		name: popupFormNameCard.value,
-		link: popupFormLinkImg.value,
-	}));
-	popupFormNameCard.value = '';
-	popupFormLinkImg.value = '';
-	popupHide(popupAddCard);
-};
 
-popupFormAddCard.addEventListener('submit', addNewCard);
 
 
 
