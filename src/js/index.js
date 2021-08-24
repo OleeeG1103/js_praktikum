@@ -96,20 +96,32 @@ const initialCards = [
 function renderGalleryCards() { 
     const newInitialCards = initialCards.map(showInitialCards); 
         galleryList.append(...newInitialCards); 
-} 
+}; 
 
 function showInitialCards(item) { 
     const card = galleryTemplate.querySelector('.card').cloneNode(true);
     const cardBodyTitle = card.querySelector('.card-body--title'); 
     const cardTopPhoto = card.querySelector('.card-top--photo'); 
+    const cardLike = card.querySelector('.card-body--like');
+    const deleteCardBtn = card.querySelector('.card-delete');
+
         cardBodyTitle.textContent = item.name; 
         cardTopPhoto.src = item.link; 
         cardTopPhoto.alt = item.name;
 
+        cardLike.addEventListener('click', function (evt) {
+        	evt.target.classList.toggle('card-body--like-active');
+        });
+
+        deleteCardBtn.addEventListener('click', function (evt) {
+            evt.target.closest('.card').remove();
+        }); 
+
     return card; 
-}
+};
 
 renderGalleryCards();
+
 function addNewCard(evt) {
 	evt.preventDefault();
 	galleryList.prepend(showInitialCards({
@@ -119,6 +131,11 @@ function addNewCard(evt) {
 	popupFormNameCard.value = '';
 	popupFormLinkImg.value = '';
 	popupHide(popupAddCard);
-}
+};
 
 popupFormAddCard.addEventListener('submit', addNewCard);
+
+
+
+ 
+

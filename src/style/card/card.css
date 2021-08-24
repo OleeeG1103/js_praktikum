@@ -7,6 +7,7 @@
     font-style: normal;
     font-weight: 900;
     color: #000000;
+    position: relative;
 }
 
 .card-top--photo {
@@ -20,10 +21,53 @@
 	padding: 15px 20px 31px 20px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .card-body--title {
 	text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    width: calc(100% - 24px);
+}
+
+.card-body--like {
+	background: url(../../img/icon/like.svg) center no-repeat;
+	background-size: 100%;
+	width: 22px;
+	height: 19px;
+	outline: none;
+	border: none;
+	text-align: center;
+	transition: opacity 0.3s, transform 0.3s ;
+	cursor: pointer;
+}
+
+.card-body--like:hover {
+	opacity: 0.5;
+	transform: scale(1.1);
+}
+
+.card-body--like.card-body--like-active {
+	background: url(../../img/icon/likeActive.svg);
+}
+
+.card-delete {
+	background: url(../../img/icon/deleteCard.svg) center no-repeat;
+	background-size: 100%;
+	width: 18px;
+	height: 19.3px;
+	outline: none;
+	border: none;
+	text-align: center;
+	transition: opacity 0.3s, transform 0.3s ;
+	cursor: pointer;
+	position: absolute;
+	top: 18px;
+	right: 15px;
+}
+
+.card-delete:hover {
+	opacity: 0.5;
+	transform: scale(1.1);
 }
