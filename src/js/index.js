@@ -84,36 +84,10 @@ function addNewCard(evt) {
 
 popupFormAddCard.addEventListener('submit', addNewCard);
 
+// gallery cards, array initialCard
 const galleryList = document.querySelector('.gallery');
 //const galleryTemplate = document.querySelector('.gallery-template').content;
 const galleryTemplate = document.querySelector('.gallery-template');
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  },
-]; 
 
 function renderGalleryCards() { 
     const newInitialCards = initialCards.map(showInitialCards); 
