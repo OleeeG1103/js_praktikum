@@ -44,7 +44,7 @@ const popupHide = (popup) => {
 profileEditBtn.addEventListener('click', () => {
 	popupShow(popupEditProfile);
 	popupFormName.value = profileName.textContent;
-    popupFormPosition.value = profilePosition.textContent;
+  popupFormPosition.value = profilePosition.textContent;
 });
 
 closePopupEditProfile.addEventListener('click', () => {
@@ -85,7 +85,8 @@ function addNewCard(evt) {
 popupFormAddCard.addEventListener('submit', addNewCard);
 
 const galleryList = document.querySelector('.gallery');
-const galleryTemplate = document.querySelector('.gallery-template').content;
+//const galleryTemplate = document.querySelector('.gallery-template').content;
+const galleryTemplate = document.querySelector('.gallery-template');
 
 const initialCards = [
   {
@@ -119,37 +120,44 @@ function renderGalleryCards() {
         galleryList.append(...newInitialCards); 
 }; 
 
-function showInitialCards(item) { 
-    const card = galleryTemplate.querySelector('.card').cloneNode(true);
+const showInitialCards = (item) => { 
+    //const card = galleryTemplate.querySelector('.card').cloneNode(true);
+    const card = galleryTemplate.content.cloneNode(true);
     const cardBodyTitle = card.querySelector('.card-body--title'); 
     const cardTopPhoto = card.querySelector('.card-top--photo'); 
-    const cardLike = card.querySelector('.card-body--like');
+    const cardLikeBtn = card.querySelector('.card-body--like');
     const deleteCardBtn = card.querySelector('.card-delete');
 
         cardBodyTitle.textContent = item.name; 
         cardTopPhoto.src = item.link; 
         cardTopPhoto.alt = item.name;
 
-        cardLike.addEventListener('click', function (evt) {
-        	evt.target.classList.toggle('card-body--like-active');
-        });
+        cardLikeBtn.addEventListener('click', likeCard);
 
-        deleteCardBtn.addEventListener('click', function (evt) {
-            evt.target.closest('.card').remove();
-        });
+        deleteCardBtn.addEventListener('click', deleteCard);
 
-        cardTopPhoto.addEventListener('click', () => {
-        	popupShow(popupViewImg);
-        	popupViewImgBody.src = cardTopPhoto.src;
-        	popupViewImgBody.alt = cardTopPhoto.alt;
-        	popupViewImgTitle.textContent = cardBodyTitle.textContent;
-        });
-
-        closePopupViewImg.addEventListener('click', () => {
-        	popupHide(popupViewImg);
-        })
+        cardTopPhoto.addEventListener('click', () => viewImg(cardTopPhoto, cardBodyTitle));
 
     return card; 
+};
+
+const deleteCard = (evt) => {
+  evt.target.closest('.card').remove();
+};
+
+const likeCard = (evt) => {
+  evt.target.classList.toggle('card-body--like-active');
+};
+
+const viewImg = (cardTopPhoto, cardBodyTitle) => {
+  popupShow(popupViewImg);
+  popupViewImgBody.src = cardTopPhoto.src;
+  popupViewImgBody.alt = cardTopPhoto.alt;
+  popupViewImgTitle.textContent = cardBodyTitle.textContent;
+
+  closePopupViewImg.addEventListener('click', () => {
+    popupHide(popupViewImg);
+  })
 };
 
 renderGalleryCards();
