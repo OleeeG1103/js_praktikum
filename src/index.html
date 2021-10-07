@@ -74,9 +74,15 @@
 	    			<img class="popup-close--btn-icon" src="img/icon/close.svg" />
 	    		</button>
 	    		<span class="popup-title">Редактировать профиль</span>
-	    		<form class="popup-form popup-form--edit-profile" name="popup-form-edit-profile" action="#" method="" autocomplete="off">
-	    			<input class="popup-form--name" type="text" name="name" value="" />
-	    			<input class="popup-form--position" type="text" name="position" value="" />
+	    		<form class="popup-form popup-form--edit-profile" name="popup-form-edit-profile" action="#" method="" autocomplete="off" novalidate>
+	    			<label>
+	    			    <input class="popup-form--name popup-form--input" id="name-input" type="text" name="name" minlength="2" maxlength="40" value="" required />
+	    			    <span class="form-input--error name-input--error"></span>
+	    		    </label>
+	    		    <label>
+	    			    <input class="popup-form--position popup-form--input" id="position-input" type="text" name="position" minlength="2" maxlength="200" value="" required />
+	    			    <span class="form-input--error position-input--error"></span>
+	    			</label>
 	    			<button class="popup-form--btn" type="submit">Сохранить</button>
 	    		</form>
 	    	</div>
@@ -88,9 +94,15 @@
 	    			<img class="popup-close--btn-icon" src="img/icon/close.svg" />
 	    		</button>
 	    		<span class="popup-title">Новое место</span>
-	    		<form class="popup-form popup-form--add-card" name="popup-form-add-card" action="#" method="" autocomplete="off">
-	    			<input class="popup-form--name" type="text" name="name" value=""  />
-	    			<input class="popup-form--link" type="text" name="photo" value="" />
+	    		<form class="popup-form popup-form--add-card" name="popup-form-add-card" action="#" method="" autocomplete="off" novalidate>
+	    			<label>
+	    			    <input class="popup-form--name popup-form--input" id="add-card-name-input" type="text" name="name" minlength="2" maxlength="30" value="" required />
+	    			    <span class="form-input--error add-card-name-input--error"></span>
+	    		    </label>
+	    			<label>
+	    			    <input class="popup-form--link popup-form--input" id="link-input" type="url" name="photo" value="" required />
+	    			    <span class="form-input--error link-input--error"></span>
+	    		    </label>
 	    			<button class="popup-form--btn" type="submit">Сохранить</button>
 	    		</form>
 	    	</div>
@@ -111,6 +123,7 @@
 
 	<script src="js/initialCards.js"></script>
 	<script src="js/index.js"></script>
+	<script src="js/validate.js"></script>
 
 </body>
 </html>

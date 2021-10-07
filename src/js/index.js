@@ -68,6 +68,8 @@ profileAddCardBtn.addEventListener('click', () => {
 });
 
 closePopupAddCard.addEventListener('click', () => {
+	//popupFormNameCard.value = '';
+	//popupFormLinkImg.value = '';
 	popupHide(popupAddCard);
 });
 
@@ -136,8 +138,7 @@ const viewImg = (cardTopPhoto, cardBodyTitle) => {
 
 renderGalleryCards();
 
-
-
+// valid forms 
 
 
  
