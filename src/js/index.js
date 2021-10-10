@@ -34,11 +34,26 @@ const popupViewImgTitle = document.querySelector('.popup-view-img--title');
 // show/hide popup
 const popupShow = (popup) => {
 	popup.classList.add('popup-wrapper--show');
+	document.addEventListener('keydown', popupHideEsc);
 };
 
 const popupHide = (popup) => {
 	popup.classList.remove('popup-wrapper--show');
+	document.addEventListener('keydown', popupHideEsc);
 };
+
+const popupHideEsc = function (evt) {
+  if ( 
+    evt.key === 'Escape' && document.querySelector('.popup-wrapper--show') !== null) { 
+    popupHide(document.querySelector('.popup-wrapper--show')); 
+  } 
+}; 
+
+document.addEventListener('click', (evt) => { 
+  if (evt.target === document.querySelector('.popup-wrapper--show')) {
+    popupHide(document.querySelector('.popup-wrapper--show'));
+  }
+}); 
 
 // forms edit popup
 profileEditBtn.addEventListener('click', () => {
