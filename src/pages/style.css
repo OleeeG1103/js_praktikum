@@ -1,0 +1,17 @@
+@import url(../style/main/main.css);
+@import url(../style/wrapper/wrapper.css);
+@import url(../style/header/header.css);
+@import url(../style/profile/profile.css);
+@import url(../style/gallery/gallery.css);
+@import url(../style/card/card.css);
+@import url(../style/footer/footer.css);
+@import url(../style/popup/popup.css);
+
+body {
+	width: 100vw;
+	height: 100vh;
+    background-color: #000000;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+

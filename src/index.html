@@ -6,8 +6,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet" />
-	<link rel="stylesheet" href="style/normalize.css" />
-	<link rel="stylesheet" href="style/style.css" />
+
 	<title>Mesto</title>
 </head>
 <body>
@@ -16,14 +15,14 @@
 		    <header class="header">
 			    <div class="header-logo">
 				    <a class="logo" href="index.html">
-					    <img src="img/icon/logo.svg" alt="logo-mesto" />
+					    <img src="<%=require('./img/icon/logo.svg')%>" alt="logo-mesto" />
 				    </a>
 			    </div>
 		    </header>
 
 		    <div class="profile">
 		    	<div class="profile-photo">
-		    		<img src="img/avatar.jpg" alt="avatar" />
+		    		<img src="<%=require('./img/avatar.jpg')%>" alt="avatar" />
 		    	</div>
 
 		    	<div class="profile-info">
@@ -36,13 +35,13 @@
 		    		</div>
 
 		    		<button class="profile-info--editBtn">
-		    			<img src="img/icon/editButton.svg" alt="editInfo" />
+		    			<img src="<%=require('./img/icon/editButton.svg')%>" alt="editInfo" />
 		    		</button>
 
 		    	</div>
 
 		    	<button class="profile-add-card--btn">
-		    		<img src="img/icon/addButton.svg" alt="addNew" />
+		    		<img src="<%=require('./img/icon/addButton.svg')%>" alt="addNew" />
 		    	</button>
 		    </div>
 
@@ -58,7 +57,7 @@
 	    <template class="gallery-template">
 	    	<div class="card">
 		    	<div class="card-top">
-		    		<img class="card-top--photo" src="" alt="photo" />
+		    		<img class="card-top--photo" src="" alt="" />
 		    	</div>
 		    	<div class="card-body">
 		    		<span class="card-body--title"></span>
@@ -71,16 +70,16 @@
 	    <div class="popup-wrapper" id="popupEditProfile">
 	    	<div class="popup">
 	    		<button class="popup-close popup-close--editProfile">
-	    			<img class="popup-close--btn-icon" src="img/icon/close.svg" alt="close-icon" />
+	    			<img class="popup-close--btn-icon" src="<%=require('./img/icon/close.svg')%>" alt="close-icon" />
 	    		</button>
 	    		<span class="popup-title">Редактировать профиль</span>
 	    		<form class="popup-form popup-form--edit-profile" name="popup-form-edit-profile" action="#" autocomplete="off" novalidate>
 	    			<label>
-	    			    <input class="popup-form--name popup-form--input" id="name-input" type="text" name="name" minlength="2" maxlength="40" value="" required />
+	    			    <input class="popup-form--name popup-form--input" id="name-input" type="text" name="username" minlength="2" maxlength="40" value="" required />
 	    			    <span class="form-input--error name-input--error"></span>
 	    		    </label>
 	    		    <label>
-	    			    <input class="popup-form--position popup-form--input" id="position-input" type="text" name="position" minlength="2" maxlength="200" value="" required />
+	    			    <input class="popup-form--position popup-form--input" id="position-input" type="text" name="job" minlength="2" maxlength="200" value="" required />
 	    			    <span class="form-input--error position-input--error"></span>
 	    			</label>
 	    			<button class="popup-form--btn" type="submit">Сохранить</button>
@@ -91,16 +90,16 @@
 	    <div class="popup-wrapper" id="popupAddCard">
 	    	<div class="popup">
 	    		<button class="popup-close popup-close--addCard">
-	    			<img class="popup-close--btn-icon" src="img/icon/close.svg" alt="close-icon" />
+	    			<img class="popup-close--btn-icon" src="<%=require('./img/icon/close.svg')%>" alt="close-icon" />
 	    		</button>
 	    		<span class="popup-title">Новое место</span>
 	    		<form class="popup-form popup-form--add-card" name="popup-form-add-card" action="#" autocomplete="off" novalidate>
 	    			<label>
-	    			    <input class="popup-form--name popup-form--input" id="add-card-name-input" type="text" name="name" minlength="2" maxlength="30" value="" required />
+	    			    <input class="popup-form--name popup-form--input" id="add-card-name-input" type="text" name="name" minlength="2" maxlength="30" value="" placeholder="Название" required />
 	    			    <span class="form-input--error add-card-name-input--error"></span>
 	    		    </label>
 	    			<label>
-	    			    <input class="popup-form--link popup-form--input" id="link-input" type="url" name="photo" value="" required />
+	    			    <input class="popup-form--link popup-form--input" id="link-input" type="url" name="link" value="" placeholder="Ссылка на картинку"required />
 	    			    <span class="form-input--error link-input--error"></span>
 	    		    </label>
 	    			<button class="popup-form--btn" type="submit">Сохранить</button>
@@ -111,7 +110,7 @@
 	    <div class="popup-wrapper" id="popupViewImg">
 	    	<div class="popup popup-view-img">
 	    		<button class="popup-close popup-close--view-img">
-	    			<img class="popup-close--btn-icon" src="img/icon/close.svg" alt="close-icon" />
+	    			<img class="popup-close--btn-icon" src="<%=require('./img/icon/close.svg')%>" alt="close-icon" />
 	    		</button>
 	    		<div class="popup-body">
 	    			<img class="popup-body--img" src="#" alt="#" />
@@ -120,12 +119,6 @@
 	    	</div>
 	    </div>
 	</main>
-
-	<script type="module" src="js/initialCards.js"></script>
-	<script type="module" src="js/index.js"></script>
-	<script type="module" src="js/popup.js"></script>
-	<script type="module" src="js/Card.js"></script>
-	<script type="module" src="js/FormValidator.js"></script>	
 
 </body>
 </html>
