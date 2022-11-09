@@ -22,7 +22,10 @@
 
 		    <div class="profile">
 		    	<div class="profile-photo">
-		    		<img src="<%=require('./img/avatar.jpg')%>" alt="avatar" />
+		    		<img class="profile-photo--img" src="<%=require('./img/avatar.jpg')%>" alt="avatar" />
+		    		<button class="profile-photo-btn">
+		    			<img src="<%=require('./img/icon/editButton.svg')%>" alt="editphoto" />
+		    		</button>
 		    	</div>
 
 		    	<div class="profile-info">
@@ -61,7 +64,10 @@
 		    	</div>
 		    	<div class="card-body">
 		    		<span class="card-body--title"></span>
-		    		<button class="card-body--like"></button>
+		    		<div class="card-body-counter">
+		    		    <button class="counter-like--btn"></button>
+		    		    <span class="counter">0</span>
+		    		</div>
 		    	</div>
 		    	<button class="card-delete"></button>
 		    </div>
@@ -87,6 +93,22 @@
 	    	</div>
 	    </div>
 
+	    <div class="popup-wrapper" id="popupEditProfilePhoto">
+	    	<div class="popup popup-edit-profile-photo">
+	    		<button class="popup-close popup-close--editProfilePhoto">
+	    			<img class="popup-close--btn-icon" src="<%=require('./img/icon/close.svg')%>" alt="close-icon" />
+	    		</button>
+	    		<span class="popup-title">Обновить Аватар</span>
+	    		<form class="popup-form popup-form--edit-profile-photo" name="popup-form-edit-profile-photo" action="#" autocomplete="off" novalidate>
+	    			<label>
+	    			    <input class="popup-form--link popup-form--input" id="profile-photo-input" type="url" name="photo" value="" placeholder="Ссылка на картинку" required />
+	    			    <span class="form-input--error profile-photo-input--error"></span>
+	    		    </label>
+	    			<button class="popup-form--btn" type="submit">Сохранить</button>
+	    		</form>
+	    	</div>
+	    </div>
+
 	    <div class="popup-wrapper" id="popupAddCard">
 	    	<div class="popup">
 	    		<button class="popup-close popup-close--addCard">
@@ -99,7 +121,7 @@
 	    			    <span class="form-input--error add-card-name-input--error"></span>
 	    		    </label>
 	    			<label>
-	    			    <input class="popup-form--link popup-form--input" id="link-input" type="url" name="link" value="" placeholder="Ссылка на картинку"required />
+	    			    <input class="popup-form--link popup-form--input" id="link-input" type="url" name="link" value="" placeholder="Ссылка на картинку" required />
 	    			    <span class="form-input--error link-input--error"></span>
 	    		    </label>
 	    			<button class="popup-form--btn" type="submit">Сохранить</button>
@@ -116,6 +138,18 @@
 	    			<img class="popup-body--img" src="#" alt="#" />
 	    		</div>
 	    		<span class="popup-title popup-view-img--title"></span>
+	    	</div>
+	    </div>
+
+	    <div class="popup-wrapper" id="popupDeleteCard">
+	    	<div class="popup popup-delete-card">
+	    		<button class="popup-close popup-close--deleteCard">
+	    			<img class="popup-close--btn-icon" src="<%=require('./img/icon/close.svg')%>" alt="close-icon" />
+	    		</button>
+	    		<span class="popup-title">Вы уверены?</span>
+	    		<form class="popup-form popup-form--delete-card" name="popup-form-delete-card" action="#" autocomplete="off" novalidate>
+	    			<button class="popup-form--btn" type="submit">Да</button>
+	    		</form>
 	    	</div>
 	    </div>
 	</main>

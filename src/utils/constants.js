@@ -2,10 +2,16 @@
 const profileEditBtn = document.querySelector('.profile-info--editBtn');
 const popupProfile = document.querySelector('#popupEditProfile');
 
+const editProfilePhotoBtn = document.querySelector('.profile-photo-btn');
+const popupEditProfilePhoto = document.querySelector('#popupEditProfilePhoto');
+const popupFormEditProfilePhoto = document.querySelector('.popup-form--edit-profile-photo');
+const avatarLinkInput = popupFormEditProfilePhoto.querySelector('#profile-photo-input');
+
 // const form edit popup
 const profileSelectors = { 
 	profileName: "#profile-name", //имя в профиле  
 	profileJob: "#profile-position", //деятельность в профиле 
+    profileAvatar: '.profile-photo--img',
   };
 
 const popupFormEditProfile = document.querySelector('.popup-form--edit-profile');
@@ -22,9 +28,17 @@ const popupFormAddCard = document.querySelector('.popup-form--add-card');
 // const show/hide view img popup
 const popupViewImg = document.querySelector('#popupViewImg');
 
+// const show/hide delete card popup
+const deleteCardBtn = document.querySelector('.card-delete');
+const popupDeleteCard = document.querySelector('#popupDeleteCard');
+
 export {
     profileEditBtn,
-    popupProfile, 
+    popupProfile,
+    editProfilePhotoBtn,
+    popupEditProfilePhoto,
+    popupFormEditProfilePhoto,
+    avatarLinkInput, 
     profileSelectors, 
     popupFormEditProfile, 
     popupFormName,
@@ -33,4 +47,6 @@ export {
     popupAddImg,
     popupFormAddCard,
     popupViewImg,
+    deleteCardBtn,
+    popupDeleteCard,
 };

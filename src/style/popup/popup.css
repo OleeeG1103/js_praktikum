@@ -158,6 +158,11 @@
     margin: 10px 0 0 0;
 }
 
+.popup.popup-delete-card,
+.popup.popup-edit-profile-photo {
+    height: auto;
+}
+
 @media all and (max-width: 768px) {
 	.popup {
 		width: 282px;
